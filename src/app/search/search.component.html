@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <h2>Search</h2>
+  <form (ngSubmit)="search()">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="query"
+        name="query"
+        placeholder="Search for artists"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  <div *ngIf="results.length">
+    <h3>Results</h3>
+    <ul class="list-group">
+      <li *ngFor="let artist of results" class="list-group-item">
+        <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

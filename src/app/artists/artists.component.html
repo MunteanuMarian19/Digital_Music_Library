@@ -1,0 +1,40 @@
+<!-- <div class="container mt-3">
+  <h2>Artists</h2>
+  <ul class="list-group">
+    <li *ngFor="let artist of artists" class="list-group-item">
+      <a [routerLink]="['/artists', artist._id]"
+        >{{ artist.name }} -
+        <div *ngFor="let album of artist.albums" class="list-group-item">
+          {{ album.title }}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div class="container mt-3">
+  <h2>Artists</h2>
+  <ul class="list-group">
+    <li *ngFor="let artist of artists" class="list-group-item">
+      <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+      <div *ngFor="let album of artist.albums" class="list-group-item">
+        <a [routerLink]="['/albums', album._id]">{{ album.title }}</a>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+<div class="container mt-3">
+  <h2>Artists</h2>
+  <ul class="list-group">
+    <li *ngFor="let artist of artists" class="list-group-item">
+      <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+      <div
+        *ngFor="let album of artist.albums; let i = index"
+        class="list-group-item"
+      >
+        <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+      </div>
+    </li>
+  </ul>
+</div>
