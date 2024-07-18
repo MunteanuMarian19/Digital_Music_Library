@@ -12,21 +12,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './album-details.component.html',
   styleUrls: ['./album-details.component.scss'],
 })
-// export class AlbumDetailsComponent implements OnInit {
-//   album: any;
-
-//   constructor(
-//     private route: ActivatedRoute,
-//     private albumService: AlbumService
-//   ) {}
-
-//   ngOnInit(): void {
-//     const id = this.route.snapshot.paramMap.get('id');
-//     this.albumService.getAlbum(id!).subscribe((data) => {
-//       this.album = data;
-//     });
-//   }
-// }
 export class AlbumDetailsComponent implements OnInit {
   album: any;
   artist: any;
@@ -35,13 +20,6 @@ export class AlbumDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private artistService: ArtistService
   ) {}
-
-  // ngOnInit(): void {
-  //   const id = this.route.snapshot.paramMap.get('id');
-  //   this.artistService.getAlbum(id!).subscribe((data) => {
-  //     this.album = data;
-  //   });
-  // }
 
   ngOnInit(): void {
     const artistId = this.route.snapshot.paramMap.get('artistId');
