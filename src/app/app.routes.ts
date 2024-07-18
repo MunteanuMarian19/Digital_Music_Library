@@ -9,8 +9,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'artists', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
   { path: 'albums', component: AlbumsComponent },
-  // { path: 'albums/:id', component: AlbumDetailsComponent },
-  { path: 'albums/:artistId/:albumIndex', component: AlbumDetailsComponent }, // Updated route
+  { path: 'albums/:artistId/:albumIndex', component: AlbumDetailsComponent }, 
   { path: 'artists', component: ArtistsComponent },
   { path: 'artists/:id', component: ArtistDetailsComponent },
 ];
