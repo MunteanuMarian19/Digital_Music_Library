@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 export class ArtistService {
   private apiUrl = 'http://localhost:5000/api/artists';
   private albumUrl = 'http://localhost:5000/api/albums'; // New endpoint for albums
