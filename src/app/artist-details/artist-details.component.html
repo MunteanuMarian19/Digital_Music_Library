@@ -1,12 +1,14 @@
 <div class="container mt-3" *ngIf="artist">
-  <h2>{{ artist.name }}</h2>
-  <div *ngFor="let album of albums">
-    <h3>{{ album.title }}</h3>
-    <p>{{ album.description }}</p>
-    <ul class="list-group">
-      <li *ngFor="let song of album.songs" class="list-group-item">
-        {{ song.title }} - - - {{ song.length }}
-      </li>
-    </ul>
+  <h1 class="artists-page-title">{{ artist.name }}</h1>
+  <div class="artists-box" *ngFor="let album of albums">
+    <h3 class="album-title">Album: {{ album.title }}</h3>
+    <div class="description-songs artist-grid">
+      <p class="list-group artist-box">{{ album.description }}</p>
+      <ul class="list-group artist-box">
+        <li *ngFor="let song of album.songs" class="list-group-item">
+          {{ song.title }} - {{ song.length }}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

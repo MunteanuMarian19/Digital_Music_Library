@@ -1,0 +1,15 @@
+@import "../../styles.scss";
+
+.album-title {
+  border: 1px solid $dark1;
+  padding: 15px;
+  border-radius: var(--radius10);
+  background-color: $dark4;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+h3 {
+  width: fit-content;
+  padding: 1rem;
+}

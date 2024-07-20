@@ -1,3 +1,21 @@
+@import "../../variables.scss";
+
+.search-form {
+  margin-top: 36px !important;
+  padding: 15px !important;
+  background-color: $dark1;
+  border-radius: var(--radius10);
+  width: 80%;
+  border-radius: var(--radius10px);
+  h2 {
+    margin-bottom: 1rem;
+    color: $dark4 !important;
+  }
+  > * {
+    margin: 15px 0 15px 0;
+  }
+}
+
 .autocomplete-container {
   position: relative;
 }
@@ -15,6 +33,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  border-radius: var(--radius10px);
 
   li {
     padding: 10px;
