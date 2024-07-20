@@ -12,13 +12,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './album-details.component.html',
   styleUrls: ['./album-details.component.scss'],
 })
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
->>>>>>> origin/master
 export class AlbumDetailsComponent implements OnInit {
   album: any;
   artist: any;
