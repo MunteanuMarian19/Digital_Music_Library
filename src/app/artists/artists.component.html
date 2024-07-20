@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+<div class="container mt-3">
+  <h1 class="artists-page-title">Artists</h1>
+  <div class="artist-grid">
+    <div *ngFor="let artist of artists" class="artist-box">
+=======
+<<<<<<< HEAD
+<!-- <div class="container mt-3">
+  <h2>Artists</h2>
+  <div class="artist-grid">
+    <div *ngFor="let artist of artists" class="artist-box">
+      <h3>
+        <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+      </h3>
+      <h4>Albums:</h4>
+      <div
+        *ngFor="let album of artist.albums; let i = index"
+        class="album-item"
+      >
+        <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container mt-3">
+=======
+<div class="container mt-3">
+>>>>>>> origin/master
+  <h2>Artists</h2>
+  <ul class="list-group">
+    <li *ngFor="let artist of artists" class="list-group-item">
+>>>>>>> origin/master
+      <h3>
+        <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+      </h3>
+      <h4>Albums:</h4>
+      <div
+        *ngFor="let album of artist.albums; let i = index"
+        class="album-item"
+      >
+        <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+      </div>
+<<<<<<< HEAD
+=======
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div class="container mt-3">
+  <h2>Artists</h2>
+  <div class="row">
+    <div *ngFor="let artist of artists" class="col-md-4 mb-4">
+      <div class="artist-box">
+        <h3>
+          <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+        </h3>
+        <h4>Albums:</h4>
+        <div *ngFor="let album of artist.albums; let i = index">
+          <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container mt-3">
+  <h2>Artists</h2>
+  <div class="row">
+    <div *ngFor="let artist of artists" class="col-md-4 mb-4">
+      <div class="artist-box">
+        <h3>
+          <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
+        </h3>
+        <h4>Albums:</h4>
+        <div
+          *ngFor="let album of artist.albums; let i = index"
+          class="album-item"
+        >
+          <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <div class="container mt-3">
   <h1 class="artists-page-title">Artists</h1>
   <div class="artist-grid">
@@ -12,6 +98,7 @@
       >
         <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
       </div>
+>>>>>>> origin/master
     </div>
   </div>
 </div>

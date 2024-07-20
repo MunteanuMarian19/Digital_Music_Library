@@ -15,7 +15,15 @@ export const routes: Routes = [
   //     import('./search/search.component').then((m) => m.SearchComponent),
   // },
   { path: 'albums', component: AlbumsComponent },
+<<<<<<< HEAD
   { path: 'albums/:artistId/:albumIndex', component: AlbumDetailsComponent },
+=======
+<<<<<<< HEAD
+  { path: 'albums/:artistId/:albumIndex', component: AlbumDetailsComponent },
+=======
+  { path: 'albums/:artistId/:albumIndex', component: AlbumDetailsComponent }, 
+>>>>>>> origin/master
+>>>>>>> origin/master
   { path: 'artists', component: ArtistsComponent },
   { path: 'artists/:id', component: ArtistDetailsComponent },
   { path: '**', redirectTo: '' }, // Redirect any unknown routes to HomeComponent

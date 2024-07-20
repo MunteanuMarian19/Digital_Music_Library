@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "../../variables.scss";
 
 .navbar {
@@ -7,21 +8,31 @@
 
 .navbar-brand {
   color: $dark4 !important;
+=======
+body {
+  padding-top: 56px;
+>>>>>>> origin/master
 }
 
 .navbar-nav .nav-item .nav-link {
   cursor: pointer;
+<<<<<<< HEAD
   color: $dark4 !important;
 
   &:hover {
     color: $blue-links !important;
   }
+=======
+>>>>>>> origin/master
 }
 
 .navbar-toggler {
   outline: none;
 }
+<<<<<<< HEAD
 
 :hover {
   color: $blue-links !important;
 }
+=======
+>>>>>>> origin/master

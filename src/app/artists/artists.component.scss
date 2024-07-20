@@ -1,5 +1,226 @@
+<<<<<<< HEAD
 @import "../../styles.scss";
 
 .list-group-item {
   background-color: $dark4 !important;
+=======
+// .artist-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//   gap: 20px;
+// }
+
+// .artist-box {
+//   border: 1px solid #ddd;
+//   padding: 15px;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+//   height: 300px; /* Fixed height */
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+// .artist-box h3 a {
+//   text-decoration: none;
+//   color: #007bff;
+// }
+
+// .artist-box h3 a:hover {
+//   text-decoration: underline;
+// }
+
+// .artist-box h4 {
+//   margin-top: 15px;
+//   margin-bottom: 10px;
+// }
+
+// .album-item {
+//   margin-bottom: 5px;
+// }
+
+// .album-item a {
+//   color: #333;
+//   display: block;
+//   text-decoration: none;
+// }
+
+// .album-item a:hover {
+//   color: #007bff;
+//   text-decoration: underline;
+// }
+
+// @media (max-width: 1200px) {
+//   .artist-grid {
+//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//   }
+// }
+
+// @media (max-width: 992px) {
+//   .artist-grid {
+//     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .artist-grid {
+//     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+//   }
+// }
+
+// .container {
+//   //   display: inline-block;
+//   //   width: auto;
+
+//   //   display: flex;
+//   //   flex-direction: column;
+//   //   justify-content: center;
+//   //   align-items: center;
+
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   aspect-ratio: 1;
+// }
+
+// .artist-box {
+//   border: 1px solid #ddd;
+//   padding: 15px;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+//   height: 100%; /* Ensure the box takes the full height of the grid column */
+//   width: fit-content;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+// .artist-box h3 a {
+//   text-decoration: none;
+//   color: #007bff;
+// }
+
+// .artist-box h3 a:hover {
+//   text-decoration: underline;
+// }
+
+// .artist-box h4 {
+//   margin-top: 15px;
+//   margin-bottom: 10px;
+// }
+
+// .artist-box div a {
+//   display: block;
+//   color: #333;
+//   margin-bottom: 5px;
+// }
+
+// .artist-box div a:hover {
+//   color: #007bff;
+// }
+
+// .artist-box {
+//   border: 1px solid #ddd;
+//   padding: 15px;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+//   height: 100%; /* Ensure the box takes the full height of the grid column */
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+// .artist-box h3 a {
+//   text-decoration: none;
+//   color: #007bff;
+// }
+
+// .artist-box h3 a:hover {
+//   text-decoration: underline;
+// }
+
+// .artist-box h4 {
+//   margin-top: 15px;
+//   margin-bottom: 10px;
+// }
+
+// .album-item {
+//   margin-bottom: 5px;
+// }
+
+// .album-item a {
+//   color: #333;
+//   display: block;
+//   text-decoration: none;
+// }
+
+// .album-item a:hover {
+//   color: #007bff;
+//   text-decoration: underline;
+// }
+
+.artists-page-title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.artist-box {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  //   max-height: 200px; /* Fixed height */
+  //   max-width: 200px; /* Fixed width */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artist-box h3 a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.artist-box h3 a:hover {
+  text-decoration: underline;
+}
+
+.artist-box h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.album-item {
+  margin-bottom: 5px;
+}
+
+.album-item a {
+  color: blueviolet;
+  display: block;
+  text-decoration: none;
+}
+
+.album-item a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+// @media (max-width: 768px) {
+//   .artist-grid {
+//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//   }
+// }
+
+@media (max-width: 576px) {
+  .artist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+>>>>>>> origin/master
 }
