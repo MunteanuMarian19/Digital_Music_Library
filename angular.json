@@ -35,7 +35,8 @@
              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
+            "scripts": ["node_modules/@popperjs/core/dist/umd/popper.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -101,6 +102,7 @@
               "src/styles.scss"
             ],
             "scripts": [
+            "node_modules/@popperjs/core/dist/umd/popper.min.js",
             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }

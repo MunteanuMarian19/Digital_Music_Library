@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,13 +9,22 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
-  @ViewChild('navbarNav') navbarNav!: ElementRef;
+export class NavbarComponent implements AfterViewInit {
+  @ViewChild('navbarNav', { static: false }) navbarNav!: ElementRef;
 
-  collapseNavbar() {
-    const navbarCollapse = this.navbarNav.nativeElement;
-    if (navbarCollapse.classList.contains('show')) {
-      navbarCollapse.classList.remove('show');
+  constructor() {}
+
+  ngAfterViewInit(): void {
+    // Ensure that the navbarNav is available after the view has initialized
+    console.log(this.navbarNav);
+  }
+
+  collapseNavbar(): void {
+    // Ensure navbarNav is defined before accessing nativeElement
+    if (this.navbarNav) {
+      this.navbarNav.nativeElement.classList.remove('show');
+    } else {
+      console.error('navbarNav is undefined');
     }
   }
 }

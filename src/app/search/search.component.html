@@ -1,6 +1,6 @@
-<div class="search-form container mt-3">
-  <h2>Search Artists</h2>
-  <div class="autocomplete-container">
+<div class="container mt-3">
+  <h2 class="mb-4">Search Artists</h2>
+  <div class="autocomplete-container position-relative">
     <input
       type="text"
       class="form-control"
@@ -8,9 +8,13 @@
       [(ngModel)]="query"
       (input)="onSearch()"
     />
-    <ul class="suggestions-list" *ngIf="suggestions.length > 0">
+    <ul
+      class="list-group position-absolute w-100 mt-1"
+      *ngIf="suggestions.length > 0"
+    >
       <li
         *ngFor="let suggestion of suggestions"
+        class="list-group-item cursor-pointer"
         (click)="onSelectSuggestion(suggestion)"
       >
         {{ suggestion.name }}

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AlbumService {
-  private apiUrl = 'http://localhost:5000/api/albums';
+  private apiUrl = 'http://localhost:5000/api/albums'; // This might not be needed
 
   constructor(private http: HttpClient) {}
 
@@ -16,5 +16,11 @@ export class AlbumService {
 
   getAlbum(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  deleteAlbum(artistId: string, albumId: string): Observable<any> {
+    return this.http.delete<any>(
+      `${this.apiUrl}/${artistId}/albums/${albumId}`
+    );
   }
 }
