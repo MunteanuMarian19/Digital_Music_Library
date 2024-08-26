@@ -1,14 +1,139 @@
 <div class="container mt-3" *ngIf="artist">
-  <h1 class="artists-page-title">{{ artist.name }}</h1>
-  <div class="artists-box" *ngFor="let album of albums">
-    <h3 class="album-title">Album: {{ album.title }}</h3>
-    <div class="description-songs artist-grid">
-      <p class="list-group artist-box">{{ album.description }}</p>
-      <ul class="list-group artist-box">
-        <li *ngFor="let song of album.songs" class="list-group-item">
-          {{ song.title }} - {{ song.length }}
-        </li>
-      </ul>
+  <h1 class="text-center mb-4">{{ artist.name }}</h1>
+  <div class="row">
+    <div class="col-md-4 form-new-song-album">
+      <div *ngIf="!editingAlbum">
+        <h2>Add New Album</h2>
+        <form (ngSubmit)="addAlbum()" #albumForm="ngForm">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input
+              id="title"
+              [(ngModel)]="newAlbum.title"
+              name="title"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="!newAlbum.title && albumForm.submitted"
+              class="text-danger"
+            >
+              Title is required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea
+              id="description"
+              [(ngModel)]="newAlbum.description"
+              name="description"
+              class="form-control"
+              required
+            ></textarea>
+            <div
+              *ngIf="!newAlbum.description && albumForm.submitted"
+              class="text-danger"
+            >
+              Description is required
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-success mt-3"
+            [disabled]="!albumForm.form.valid"
+          >
+            Add Album
+          </button>
+        </form>
+      </div>
+
+      <div *ngIf="editingAlbum">
+        <h2>Edit Album</h2>
+        <form (ngSubmit)="updateAlbum()" #updateAlbumForm="ngForm">
+          <div class="mb-3">
+            <label for="editTitle" class="form-label">Title:</label>
+            <input
+              id="editTitle"
+              [(ngModel)]="editingAlbum.title"
+              name="editTitle"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="!editingAlbum.title && updateAlbumForm.submitted"
+              class="text-danger"
+            >
+              Title is required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="editDescription" class="form-label">Description:</label>
+            <textarea
+              id="editDescription"
+              [(ngModel)]="editingAlbum.description"
+              name="editDescription"
+              class="form-control"
+              required
+            ></textarea>
+            <div
+              *ngIf="!editingAlbum.description && updateAlbumForm.submitted"
+              class="text-danger"
+            >
+              Description is required
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-success mt-3"
+            [disabled]="!updateAlbumForm.form.valid"
+          >
+            Update Album
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="mb-4">
+        <h3>Albums:</h3>
+        <div *ngFor="let album of albums; let i = index" class="mb-3">
+          <div class="card card-body" #editAlbumForm>
+            <div class="card-body width-fixed">
+              <h4
+                class="card-title d-flex justify-content-between align-items-center"
+              >
+                Title: {{ album.title }}
+                <div class="button-container">
+                  <button
+                    class="btn btn-danger btn-sm ms-2"
+                    (click)="deleteAlbum(album._id)"
+                  >
+                    Delete
+                  </button>
+
+                  <button
+                    class="btn btn-primary btn-sm ms-2"
+                    (click)="editAlbum(album)"
+                  >
+                    Update
+                  </button>
+                </div>
+              </h4>
+              <h5>Description:</h5>
+              <p>{{ album.description }}</p>
+              <!-- Button to navigate to the album details page -->
+              <button
+                class="btn btn-secondary mt-2"
+                [routerLink]="['/artists', artist._id, 'albums', album._id]"
+              >
+                View and Manage Songs
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

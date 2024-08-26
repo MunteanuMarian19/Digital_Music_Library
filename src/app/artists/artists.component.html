@@ -1,16 +1,68 @@
 <div class="container mt-3">
-  <h1 class="artists-page-title">Artists</h1>
-  <div class="artist-grid">
-    <div *ngFor="let artist of artists" class="artist-box">
-      <h3>
-        <a [routerLink]="['/artists', artist._id]">{{ artist.name }}</a>
-      </h3>
-      <h4>Albums:</h4>
-      <div
-        *ngFor="let album of artist.albums; let i = index"
-        class="album-item"
-      >
-        <a [routerLink]="['/albums', artist._id, i]">{{ album.title }}</a>
+  <h1 class="text-center mb-4">Artists</h1>
+
+  <!-- Form to add a new artist -->
+  <div class="mb-4">
+    <h2>Add New Artist</h2>
+    <form (ngSubmit)="addArtist()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input
+          id="name"
+          [(ngModel)]="newArtist.name"
+          name="name"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success">Add Artist</button>
+    </form>
+  </div>
+
+  <!-- Responsive grid layout for artist cards -->
+  <div class="grid-container">
+    <div *ngFor="let artist of artists" class="grid-item">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">
+            <a
+              [routerLink]="['/artists', artist._id]"
+              class="text-decoration-none"
+              >{{ artist.name | truncate }}</a
+            >
+          </h3>
+          <h4>Albums:</h4>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Select Album
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li *ngFor="let album of artist.albums; let i = index">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="['/artists', artist._id, 'albums', album._id]"
+                  >{{ album.title | truncate : 15 }}</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-3">
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteArtist(artist._id)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

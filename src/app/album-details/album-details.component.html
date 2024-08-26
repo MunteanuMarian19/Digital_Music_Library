@@ -1,11 +1,96 @@
 <div class="container mt-3" *ngIf="album">
-  <h2 class="artists-page-title">{{ album.title }}</h2>
-  <div class="description-songs artist-grid">
-    <p class="list-group artist-box">{{ album.description }}</p>
-    <ul class="list-group artist-box">
-      <li *ngFor="let song of album.songs" class="list-group-item">
-        {{ song.title }} - {{ song.length }}
-      </li>
-    </ul>
+  <h2 class="text-center mb-4">{{ album.title }}</h2>
+  <div class="row">
+    <!-- Form to edit song details -->
+    <div class="col-md-4 form-song-album">
+      <h2>{{ editingSongIndex !== null ? "Edit Song" : "Add New Song" }}</h2>
+      <form
+        (ngSubmit)="saveSong()"
+        #editSongFormRef="ngForm"
+        #editForm
+        id="editForm"
+      >
+        <div class="mb-3">
+          <label for="songTitle" class="form-label">Title:</label>
+          <input
+            id="songTitle"
+            [(ngModel)]="songFormData.title"
+            name="songTitle"
+            class="form-control"
+            required
+            autocomplete="off"
+          />
+          <div
+            *ngIf="!songFormData.title && editSongFormRef.submitted"
+            class="text-danger"
+          >
+            Title is required
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Length:</label>
+          <div class="input-group">
+            <input
+              id="songLengthMinutes"
+              type="text"
+              [(ngModel)]="songFormData.lengthMinutes"
+              name="songLengthMinutes"
+              class="form-control"
+              placeholder="Minutes"
+              required
+              (keypress)="validateMinutesInput($event)"
+            />
+            <select
+              id="songLengthSeconds"
+              [(ngModel)]="songFormData.lengthSeconds"
+              name="songLengthSeconds"
+              class="form-select"
+              required
+            >
+              <option *ngFor="let second of secondsArray" [value]="second">
+                {{ second }}
+              </option>
+            </select>
+          </div>
+          <div *ngIf="isSongLengthInvalid()" class="text-danger">
+            Please enter a valid song length.
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-success mt-3"
+          [disabled]="!editSongFormRef.form.valid"
+        >
+          {{ editingSongIndex !== null ? "Update Song" : "Add Song" }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Album details and song list -->
+    <div class="col-md-8">
+      <p class="card-text">{{ album.description }}</p>
+      <ul class="list-group">
+        <li
+          *ngFor="let song of album.songs; let i = index"
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <div>{{ song.title }} - {{ song.length }}</div>
+          <div class="button-container">
+            <button class="btn btn-primary btn-sm me-2" (click)="editSong(i)">
+              Update
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteSong(i)">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+      <button
+        class="btn btn-danger btn-sm float-end mt-3"
+        (click)="deleteAlbum()"
+      >
+        Delete Album
+      </button>
+    </div>
   </div>
 </div>
