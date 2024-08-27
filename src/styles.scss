@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+h2 {
+  margin: 18px;
+}
+
 h3 {
   text-align: center;
   margin: 20px;
@@ -12,12 +17,21 @@ h3 {
 
 p {
   word-break: break-all;
+  text-align: start;
+  word-break: auto-phrase;
 }
 
 a {
   white-space: break-spaces !important;
   word-break: break-word;
   margin: auto;
+}
+
+form {
+  background-color: $artist-box;
+  padding: 10px;
+  border: 1px solid $border;
+  border-radius: 6px;
 }
 
 .card-body {
@@ -71,4 +85,12 @@ a {
 
 .text-center {
   word-break: break-all;
+}
+
+.card {
+  background-color: $artist-box;
+}
+
+.list-group {
+  border: 1px solid $border;
 }

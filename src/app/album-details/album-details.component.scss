@@ -1,3 +1,9 @@
+@import "../../variables";
 
+.form-song-album {
+  height: fit-content;
+}
 
-
+.list-group-item {
+  background-color: $artist-box;
+}
